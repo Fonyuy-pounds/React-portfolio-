@@ -1,0 +1,81 @@
+/* Floating Elements */
+.floating-element {
+    position: fixed;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+    animation: float 15s infinite ease-in-out;
+}
+
+/* Floating animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(5vw, -5vh);
+    }
+
+    50% {
+        transform: translate(10vw, 5vh);
+    }
+
+    75% {
+        transform: translate(-5vw, 10vh);
+    }
+}
+
+/* Shape styles */
+.floating-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--primary-color), transparent);
+}
+
+.floating-square {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, var(--secondary-color), transparent);
+    transform: rotate(45deg);
+}
+
+.floating-triangle {
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 300px solid var(--accent-color);
+}
+
+/* Particles */
+.particle {
+    position: fixed;
+    border-radius: 50%;
+    animation: float-particle infinite ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes float-particle {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(50px, -50px);
+    }
+
+    50% {
+        transform: translate(100px, 50px);
+    }
+
+    75% {
+        transform: translate(-50px, 100px);
+    }
+}

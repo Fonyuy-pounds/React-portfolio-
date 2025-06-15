@@ -1,0 +1,213 @@
+/* Define CSS Variables for Colors (matching your Tailwind theme) */
+:root {
+    --dark-bg: #1a1a2e;
+    --dark-card: #16213e;
+    --accent-teal: #0f4c75;
+    --accent-light: #3282b8;
+    --text-light: #e0e0e0;
+    --text-muted: #b0b0b0;
+    --transition: all 0.3s ease-in-out;
+    /* Re-using your existing transition variable */
+}
+
+/* Base Header Styles */
+.header {
+    background-color: var(--dark-card);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 1rem 1rem;
+    /* Equivalent to py-4 px-4 */
+}
+
+.header-container {
+    max-width: 1280px;
+    /* Equivalent to max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    font-size: 1.5rem;
+    /* Equivalent to text-2xl */
+    font-weight: bold;
+    color: var(--accent-teal);
+}
+
+/* Desktop Navigation Styles */
+.nav-links-desktop {
+    display: none;
+    /* Hidden by default, shown on medium screens and up */
+    gap: 1.5rem;
+    /* Equivalent to space-x-6 */
+}
+
+.nav-links-desktop a {
+    color: var(--text-light);
+    font-size: 1.125rem;
+    /* Equivalent to text-lg */
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+    /* Equivalent to transition-colors duration-200 */
+    text-decoration: none;
+    /* Remove default underline */
+    position: relative;
+    /* For underline effect */
+    padding-bottom: 0.25rem;
+    /* Space for underline */
+}
+
+.nav-links-desktop a:hover {
+    color: var(--accent-light);
+}
+
+/* Active Page Effect for Desktop */
+.nav-links-desktop a.active {
+    color: var(--accent-light);
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    /* Equivalent to underline-offset-4 */
+    /* Alternatively, for a more custom underline effect: */
+    /*
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--accent-light);
+        transform: scaleX(1);
+        transition: transform 0.2s ease-out;
+    }
+    */
+}
+
+
+/* Mobile Navigation Toggle (Hamburger Icon) */
+.nav-toggle-mobile {
+    display: flex;
+    /* Show only on mobile */
+    color: var(--text-light);
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    /* Remove default button padding */
+}
+
+.nav-toggle-mobile svg {
+    width: 2rem;
+    /* Equivalent to w-8 */
+    height: 2rem;
+    /* Equivalent to h-8 */
+}
+
+/* Mobile Navigation Menu */
+.nav-links-mobile {
+    position: fixed;
+    top: 0;
+    right: -75%;
+    /* Start off-screen */
+    width: 75%;
+    /* Equivalent to w-3/4 */
+    height: 100vh;
+    /* Full viewport height */
+    background-color: var(--dark-card);
+    padding: 2rem;
+    /* Equivalent to p-8 */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    /* Shadow on the left edge */
+    transform: translateX(100%);
+    /* Initial state: fully translated out */
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    /* Equivalent to space-y-8 */
+    z-index: 40;
+}
+
+.nav-links-mobile.open {
+    transform: translateX(0);
+    /* Slide into view */
+}
+
+.nav-links-mobile a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    /* Equivalent to text-2xl */
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 0.5rem;
+    /* Space for underline */
+}
+
+.nav-links-mobile a:hover {
+    color: var(--accent-light);
+}
+
+/* Active Page Effect for Mobile */
+.nav-links-mobile a.active {
+    color: var(--accent-light);
+    text-decoration: underline;
+    text-underline-offset: 0.75rem;
+    /* Equivalent to underline-offset-8 */
+}
+
+/* Close Button for Mobile Nav */
+.nav-close-button {
+    position: absolute;
+    top: 1rem;
+    /* Equivalent to top-4 */
+    right: 1rem;
+    /* Equivalent to right-4 */
+    color: var(--text-light);
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-close-button svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+
+/* Media Queries for Responsiveness (Matching your previous CSS) */
+@media (min-width: 768px) {
+    .nav-links-desktop {
+        display: flex;
+        /* Show desktop nav */
+    }
+
+    .nav-toggle-mobile,
+    .nav-links-mobile {
+        display: none;
+        /* Hide mobile nav elements */
+    }
+}
+
+/* For smaller screens, ensuring logo and other elements scale down appropriately */
+@media (max-width: 576px) {
+    .header {
+        padding: 0.75rem 0.75rem;
+        /* Slightly smaller padding */
+    }
+
+    .header-logo {
+        font-size: 1.25rem;
+        /* Smaller logo */
+    }
+}
