@@ -163,26 +163,26 @@ const Portfolio = () => {
     ];
 
     // Education data
-    const education = [
-        {
-            degree: "Completed by GCE advance level",
-            institution: "G.B.H.S ATIELA",
-            year: "2024",
-            highlights: [
-                "Passed 4/4 papers that i registered in the GCE",
-                "Passed my entrance exmaination into the university"
-            ]
-        },
-        {
-            degree: "BSc Computer Science",
-            institution: "University of Bamenda",
-            year: "2024",
-            highlights: [
-                "Specialized in AI and Machine Learning",
-                "A participant of the weekend of code at seed"
-            ]
-        }
-    ];
+    // const education = [
+    //     {
+    //         degree: "Completed by GCE advance level",
+    //         institution: "G.B.H.S ATIELA",
+    //         year: "2024",
+    //         highlights: [
+    //             "Passed 4/4 papers that i registered in the GCE",
+    //             "Passed my entrance exmaination into the university"
+    //         ]
+    //     },
+    //     {
+    //         degree: "BSc Computer Science",
+    //         institution: "University of Bamenda",
+    //         year: "2024",
+    //         highlights: [
+    //             "Specialized in AI and Machine Learning",
+    //             "A participant of the weekend of code at seed"
+    //         ]
+    //     }
+    // ];
 
     // Custom cursor effect
     useEffect(() => {
@@ -498,7 +498,7 @@ const Portfolio = () => {
                                 content, I believe <strong>the best learning happens by doing</strong>.
                             </p>
 
-                            <div className="experience-section">
+                            {/* <div className="experience-section">
                                 <h3>My Journey So Far</h3>
                                 <div className="timeline">
                                     <div className="timeline-item">
@@ -538,9 +538,9 @@ const Portfolio = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
-                            <div className="education-section">
+                            {/* <div className="education-section">
                                 <h3>Education & Training</h3>
                                 <div className="education-grid">
                                     <div className="education-card">
@@ -564,7 +564,7 @@ const Portfolio = () => {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="about-image">

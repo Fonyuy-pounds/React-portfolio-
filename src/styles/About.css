@@ -1,0 +1,28 @@
+/* About Section */
+#about {
+    background-color: var(--card-bg);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.about-img {
+    flex: 1;
+}
+
+.about-img img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-cta {
+    margin-top: 2rem;
+}
